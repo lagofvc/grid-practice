@@ -1,0 +1,81 @@
+$blue: #004358;
+$teal: #1F8A70;
+$lime: #BEDB39;
+$pink: #c4255a;
+$orange: #FD7400;
+$white: #FFFFFF;
+
+body {
+    font-size: 2.5rem;
+    font-family: 'Kingthings Trypewriter 2', Courier, monooptions;
+    color: $white;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 15vh 35vh 35vh 15vh;
+    grid-template-areas: 
+        "header header header header"
+        "options content content content"
+        "recent content content content"
+        "footer footer footer footer";
+
+    .header {
+        grid-area: header;
+        background: $blue;
+    }   
+    
+    .options {
+        grid-area: options;
+        background: $lime;
+    }
+    
+    .content {
+        grid-area: content;
+        background: $teal;
+    }
+    
+    .recent {
+        grid-area: recent;
+        background: $orange;
+    }
+    
+    .footer {
+        grid-area: footer;
+        background: $pink;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+      font-size: 1.8rem;
+    }
+
+    .grid {
+        grid-template-rows: 10vh 40vh 40vh 10vh;
+        grid-template-areas: 
+            "header header header header"
+            "options options recent recent"
+            "content content content content"
+            "footer footer footer footer";
+    }
+  }
+
+@media only screen and (max-width: 400px) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    .grid {
+        grid-template-rows: 10vh 40vh 20vh 20vh 10vh;
+        grid-template-areas: 
+            "header header header header"
+            "content content content content"
+            "options options options options"
+            "recent recent recent recent"
+            "footer footer footer footer";
+    }
+}
+
